@@ -17,6 +17,10 @@
         <ListBook />
      </div>
     
+     <div class="title" style="padding-top: 30px;">
+        <h2>ECONOMIC</h2>
+        <ListBook />
+     </div>
 </template>
 
 <script>

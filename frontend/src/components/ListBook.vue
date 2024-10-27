@@ -1,34 +1,76 @@
 <template>
     <div class="list">
+        <h2>NEW ARRIVE</h2>
         <div class="list-item">
-
-            <img src="D:\ct313h01-m01\frontend\src\assets\domxanhmo.jpg" alt="">
-            <span>TEN SEXH</span>
-            <span>gia: 12345D</span>
+            <div v-for = "book in newarrive" :key="book.SACH_ID" >
+            <img src="`./assets/${book.SACH_Anh || 'default.jpg'}`" alt="">
+            <span>{{book.Sach_Ten }}</span>
+            <span>{{book.Sach_GiaBan}}</span>
+            </div>
         </div>
 
+        <h2>ROMANTIC</h2>
         <div class="list-item">
-
-            <img src="D:\ct313h01-m01\frontend\src\assets\domxanhmo.jpg" alt="">
-            <span>TEN SEXH</span>
-            <span>gia: 12345D</span>
+            <div v-for = "book in romantic" :key="book.SACH_ID" >
+            <img src="`./assets/${book.SACH_Anh || 'default.jpg'}`" alt="">
+            <span>{{book.Sach_Ten }}</span>
+            <span>{{book.Sach_GiaBan}}</span>
+            </div>
         </div>
 
+        <h2>ADVENTURE</h2>
         <div class="list-item">
-
-            <img src="D:\ct313h01-m01\frontend\src\assets\domxanhmo.jpg" alt="">
-            <span>TEN SEXH</span>
-            <span>gia: 12345D</span>
+            <div v-for = "book in adventure" :key="book.SACH_ID" >
+            <img src="`./assets/${book.SACH_Anh || 'default.jpg'}`" alt="">
+            <span>{{book.Sach_Ten }}</span>
+            <span>{{book.Sach_GiaBan}}</span>
+            </div>
         </div>
 
+        <h2>ECONOMIC</h2>
         <div class="list-item">
-
-            <img src="D:\ct313h01-m01\frontend\src\assets\domxanhmo.jpg" alt="">
-            <span>TEN SEXH</span>
-            <span>gia: 12345D</span>
+            <div v-for = "book in adventure" :key="book.SACH_ID" >
+                <img src="`./assets/${book.SACH_Anh || 'default.jpg'}`" alt="">
+                <span>{{book.Sach_Ten }}</span>
+                <span>{{book.Sach_GiaBan}}</span>
+            </div>
         </div>
     </div>
 </template>
+
+<script>
+import axios from 'axios';
+
+export default {
+  data() {
+    return {
+      newarrive: [],
+      romantic: [],
+      adventure: [],
+      economic: []
+    };
+  },
+  methods: {
+    fetchBooks() {
+      axios.get('http://localhost:3000/api/books')
+        .then(response => {
+          const allBooks = response.data;
+          // Filter books for different categories based on some condition, e.g., by date or category
+          this.newarrive = allBooks.filter(book => /* your condition for new arrive */);
+          this.romanticBooks = allBooks.filter(book => /* your condition for romantic */);
+          this.adventure = allBooks.filter(book => /* your condition for new arrive */);
+          this.economic = allBooks.filter(book => /* your condition for romantic */);
+        })
+        .catch(error => {
+          console.error('Error fetching books:', error);
+        });
+    }
+  },
+  mounted() {
+    this.fetchBooks();
+  }
+};
+</script>
 
 <style scoped>
 

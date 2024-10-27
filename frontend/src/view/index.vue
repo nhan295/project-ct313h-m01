@@ -78,7 +78,7 @@
           <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
           <button class="btn transparent" @click="toggleSignUp">Sign up</button>
         </div>
-        <img src="D:\ct313h01-m01\frontend\src\assets\log.svg" class="image" alt="Log image" />
+        <img src="../assets/log.svg" class="image" alt="Log image" />
       </div>
       
       <!-- Right Panel -->
@@ -88,7 +88,7 @@
           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
           <button class="btn transparent" @click="toggleSignIn">Sign in</button>
         </div>
-        <img src="D:\ct313h01-m01\frontend\src\assets\register.svg" class="image" alt="Register image" />
+        <img src="../assets/register.svg" class="image" alt="Register image" />
       </div>
     </div>
   </div>

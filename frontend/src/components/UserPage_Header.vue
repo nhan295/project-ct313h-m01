@@ -7,9 +7,10 @@
                     <li><a href="#category">Category</a>
                         
                             <ul class="sub_product">
-                                <li><a href="#">NEW ARRIVE</a></li>
-                                <li><a href="#">ROMANTIC</a></li>
-                                <li><a href="#">ADVENTURE</a></li>
+                                <li><a href="#">New arrive</a></li>
+                                <li><a href="#">Romantic</a></li>
+                                <li><a href="#">Adventure</a></li>
+                                <li><a href="#">Economic</a></li>
                             </ul>
                         
                     </li>
